@@ -1,7 +1,15 @@
+type ContactName = string;
+enum ContactStatus {
+  Active = "active",
+  Inactive = "inactive",
+  New = "new",
+}
+
 interface Contact extends Address {
   id: number;
-  name: string;
+  name: ContactName;
   birthDate?: Date;
+  status: ContactStatus;
 }
 
 interface Address {
@@ -17,6 +25,7 @@ let primaryContact: Contact = {
   city: "Madrid",
   country: "Spain",
   zipCode: "28002",
+  status: ContactStatus.Active,
 };
 
 let x: number;
